@@ -1,23 +1,35 @@
 import { FaPlay } from "react-icons/fa";
-import { MdOutlineCalendarToday, MdMailOutline } from "react-icons/md";
+import { MdOutlineCalendarToday } from "react-icons/md";
 import Image from "next/image";
 import Link from "next/link";
 import heroImge from "../../../app/assets/image/image 12.png";
+
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden  text-white">
-      {/* Background curve */}
-      <div className="absolute bottom-0 left-0 w-full h-60 bg-[#34C4BE] rounded-b-[100%] z-0"></div>
+    <section className="relative bg-[#34C4BE] lg:h-[500px] text-white overflow-hidden">
+      {/* U-shape Curve Bottom */}
+      <div className="absolute bottom-0 left-0 w-full h-32 z-0">
+      <svg
+          className="w-full h-full"
+          viewBox="0 0 1440 320"
+          preserveAspectRatio="none"
+        >
+          <path
+            fill="#ffffff"
+            d="M0,160 C360,320 1080,0 1440,160 L1440,320 L0,320 Z"
+          />
+        </svg>
+      </div>
 
-      <div className="relative z-10 container  mx-auto px-6 py-20 lg:flex lg:items-center lg:justify-between">
-        {/* Text Content */}
-        <div className="max-w-xl mb-10 lg:mb-0">
+      <div className="relative z-10 container mx-auto px-6 py-20 lg:flex lg:items-center lg:justify-between">
+        {/* Left Text */}
+        <div className="max-w-xl mb-16 lg:mb-0">
           <h1 className="text-4xl font-bold leading-tight text-white md:text-5xl">
-            <span className="text-orange-400">Studying</span>{" "}
+            <span className="text-orange-200">Studying</span>{" "}
             <span className="text-white">Online is now</span>{" "}
             <span className="text-white">much easier</span>
           </h1>
-          <p className="mt-6 text-lg text-gray-100">
+          <p className="mt-6 text-lg text-white">
             TOTC is an interesting platform that will teach you in a more
             interactive way.
           </p>
@@ -38,42 +50,41 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Image & Floating Boxes */}
-        <div className="relative w-full lg:w-1/2 mt-10 lg:mt-0">
-         
-          {/* Floating Card: Calendar */}
-          <div className="absolute top-8 left-0 flex items-center gap-2 bg-white p-3 rounded-lg shadow-md text-gray-800">
-            <MdOutlineCalendarToday className="text-[#34C4BE]" />
-            <div>
-              <p className="text-sm font-bold">250k</p>
-              <p className="text-xs text-gray-500">Assisted Student</p>
-            </div>
-          </div>
-
-          {/* Floating Card: Notification */}
-          <div className="absolute bottom-12 right-0 flex items-center gap-3 bg-white p-3 rounded-lg shadow-md text-gray-800">
-            <MdMailOutline className="text-orange-400" />
-            <div>
-              <p className="text-sm font-semibold">Congratulations</p>
-              <p className="text-xs text-gray-500">Your admission completed</p>
-            </div>
-          </div>
-
-          {/* Floating Card: Class */}
-          <div className="absolute bottom-0 left-0  p-4 rounded-lg shadow-md flex items-center gap-4">
+        {/* Right Side - Big Image and Floating Cards */}
+        <div className="relative w-full lg:w-1/2 flex justify-center items-center">
+          {/* Big Image */}
+          <div className="relative w-72 h-96 -mt-12  overflow-hidden ">
             <Image
-              fill
               src={heroImge}
-              className="w-full h-full rounded-full"
-              alt="Instructor"
+              alt="Hero Main"
+              fill
+              className="bg-cover"
             />
+          </div>
+
+          {/* Instructor Card - Top Right */}
+          <div className="absolute top-0 right-0 bg-white text-gray-800 p-4 rounded-lg shadow-md w-64 flex items-center gap-4">
+            <div className="relative w-12 h-12 rounded-full overflow-hidden">
+              <Image
+                src={heroImge}
+                alt="Instructor"
+                fill
+                className="object-cover"
+              />
+            </div>
             <div>
               <p className="text-sm font-medium">User Experience Class</p>
               <p className="text-xs text-gray-500">Today at 12.00 PM</p>
             </div>
-            <button className="px-3 py-1 bg-[#ED3F62] text-white text-xs rounded-md hover:bg-[#d72f4f]">
-              Join Now
-            </button>
+          </div>
+
+          {/* Assisted Student Card - Below Instructor Card */}
+          <div className="absolute top-24 right-0 bg-white text-gray-800 p-4 rounded-lg shadow-md w-64 flex items-center gap-3">
+            <MdOutlineCalendarToday className="text-[#34C4BE] text-xl" />
+            <div>
+              <p className="text-sm font-bold">250k</p>
+              <p className="text-xs text-gray-500">Assisted Student</p>
+            </div>
           </div>
         </div>
       </div>
