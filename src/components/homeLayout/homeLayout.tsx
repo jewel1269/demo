@@ -3,8 +3,8 @@ import Navber from "./navber/navber";
 import Hero from "./hero/hero";
 import Success from "./SuccessSection/success";
 import CloudFeatures from "./CloudFeature/CloudFeature";
-import TotcIntro from "./TotcIntro/TotcIntro";
 import ClassroomSection from "./ClassroomSection/ClassroomSection";
+import Footer from "../Footer/footer";
 
 const HomeLayout = () => {
   return (
@@ -13,8 +13,9 @@ const HomeLayout = () => {
       <Hero />
       <Success />
       <CloudFeatures />
-      <TotcIntro />
+      {/* <TotcIntro /> */}
       <ClassroomSection />
+      <Footer/>
     </div>
   );
 };
